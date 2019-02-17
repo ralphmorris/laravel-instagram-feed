@@ -30,7 +30,7 @@ return [
 	 * this one if you would like to add your own logic here.
 	 * 
 	 */
-	'instagram_model' => RalphMorris\LaravelInstagram\Models\InstagramProfile::class,
+	'instagram_model' => RalphMorris\LaravelInstagramFeed\Models\InstagramProfile::class,
 
 	/*
 	 *

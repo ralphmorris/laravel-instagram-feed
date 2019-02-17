@@ -1,13 +1,13 @@
 <?php
 
-namespace RalphMorris\LaravelInstagram;
+namespace RalphMorris\LaravelInstagramFeed;
 
 use Carbon\Carbon;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Cache;
-use RalphMorris\LaravelInstagram\Exceptions\InstagramErrorException;
-use RalphMorris\LaravelInstagram\Models\InstagramProfile;
+use RalphMorris\LaravelInstagramFeed\Exceptions\InstagramErrorException;
+use RalphMorris\LaravelInstagramFeed\Models\InstagramProfile;
 
 class Instagram
 {

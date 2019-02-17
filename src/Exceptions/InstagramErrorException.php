@@ -1,9 +1,9 @@
 <?php
 
-namespace RalphMorris\LaravelInstagram\Exceptions;
+namespace RalphMorris\LaravelInstagramFeed\Exceptions;
 
 use Exception;
-use RalphMorris\LaravelInstagram\Models\InstagramProfile;
+use RalphMorris\LaravelInstagramFeed\Models\InstagramProfile;
 
 class InstagramErrorException extends Exception
 {

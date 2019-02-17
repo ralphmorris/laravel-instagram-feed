@@ -1,10 +1,10 @@
 <?php
 
-namespace RalphMorris\LaravelInstagram;
+namespace RalphMorris\LaravelInstagramFeed;
 
 use Illuminate\Support\ServiceProvider;
 
-class LaravelInstagramServiceProvider extends ServiceProvider
+class LaravelInstagramFeedServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.

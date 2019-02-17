@@ -1,6 +1,6 @@
 <?php
 
-namespace RalphMorris\LaravelInstagram\Tests;
+namespace RalphMorris\LaravelInstagramFeed\Tests;
 
 use PHPUnit\Framework\TestCase;
 

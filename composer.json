@@ -1,11 +1,11 @@
 {
-    "name": "ralphmorris/laravel-instagram",
+    "name": "ralphmorris/laravel-instagram-feed",
     "description": "Adds an OAuth Instagram API integration to a Laravel app",
     "keywords": [
         "ralphmorris",
-        "laravel-instagram"
+        "laravel-instagram-feed"
     ],
-    "homepage": "https://github.com/ralphmorris/laravel-instagram",
+    "homepage": "https://github.com/ralphmorris/laravel-instagram-feed",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "RalphMorris\\LaravelInstagram\\": "src"
+            "RalphMorris\\LaravelInstagramFeed\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "RalphMorris\\LaravelInstagram\\Tests\\": "tests"
+            "RalphMorris\\LaravelInstagramFeed\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -44,10 +44,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "RalphMorris\\LaravelInstagram\\LaravelInstagramServiceProvider"
+                "RalphMorris\\LaravelInstagramFeed\\LaravelInstagramFeedServiceProvider"
             ],
             "aliases": {
-                "LaravelInstagram": "RalphMorris\\LaravelInstagram\\LaravelInstagramFacade"
+                "LaravelInstagram": "RalphMorris\\LaravelInstagramFeed\\LaravelInstagramFeedFacade"
             }
         }
     }

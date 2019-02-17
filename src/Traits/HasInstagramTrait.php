@@ -1,6 +1,6 @@
 <?php
 
-namespace RalphMorris\LaravelInstagram\Traits;
+namespace RalphMorris\LaravelInstagramFeed\Traits;
 
 trait HasInstagramTrait
 {

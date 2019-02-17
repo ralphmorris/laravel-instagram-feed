@@ -1,13 +1,13 @@
 <?php
 
-namespace RalphMorris\LaravelInstagram;
+namespace RalphMorris\LaravelInstagramFeed;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \RalphMorris\LaravelInstagram\Skeleton\SkeletonClass
+ * @see \RalphMorris\LaravelInstagramFeed\Skeleton\SkeletonClass
  */
-class LaravelInstagramFacade extends Facade
+class LaravelInstagramFeedFacade extends Facade
 {
     /**
      * Get the registered name of the component.

@@ -1,9 +1,9 @@
 <?php
 
-namespace RalphMorris\LaravelInstagram\Models;
+namespace RalphMorris\LaravelInstagramFeed\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use RalphMorris\LaravelInstagram\Instagram;
+use RalphMorris\LaravelInstagramFeed\Instagram;
 
 class InstagramProfile extends Model
 {
