@@ -1,0 +1,32 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateInstagramTable extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up()
+    {
+        Schema::create('instagram_profiles', function (Blueprint $table) {
+            $table->increments('id');
+            $table->morphs('instagramable'); 
+            $table->string('username');
+            $table->string('access_token');
+            $table->dateTime('had_an_error')->nullable();
+            $table->text('error_message')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down()
+    {
+        Schema::dropIfExists('instagram_profiles');
+    }
+}
