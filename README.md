@@ -5,15 +5,44 @@
 <!-- [![Quality Score](https://img.shields.io/scrutinizer/g/ralphmorris/laravel-instagram.svg?style=flat-square)](https://scrutinizer-ci.com/g/ralphmorris/laravel-instagram) -->
 <!-- [![Total Downloads](https://img.shields.io/packagist/dt/ralphmorris/laravel-instagram.svg?style=flat-square)](https://packagist.org/packages/ralphmorris/laravel-instagram) -->
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+Adds an OAuth integration with the Instagram API. Allow users to connect their Instagram account to a Laravel App and display their feed.
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require ralphmorris/laravel-instagram
+composer require ralphmorris/laravel-instagram-feed
 ```
+
+After installation publish the migration and config file with:
+
+```bash
+php artisan vendor:publish --provider="RalphMorris\LaravelInstagramFeed\LaravelInstagramFeedServiceProvider"
+```
+
+Then run:
+
+```bash
+php artisan migrate
+```
+
+### Config
+
+Enter your environment variables for your Instagram Client API in your .env file. You can get your API keys by going to https://www.instagram.com/developer/clients/manage/ and following the steps to register a new client.
+
+```bash
+instagram_client_id=your-client-id
+instagram_client_secret=your-client-secret
+```
+
+#### Caching
+
+By default the package caches the Instagram profiles feed for a period of time. This can be controlled in the published config file.
+
+#### Overriding Used Model
+
+You can also create your own Model, extending the default RalphMorris\LaravelInstagramFeed\Models\InstagramProfile model if you woud like to add your own mthods to this class. You can then update the config file with your own models namespace to tell the package to use that instead.
 
 ## Usage
 
