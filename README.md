@@ -42,7 +42,7 @@ By default the package caches the Instagram profiles feed for a period of time. 
 
 #### Overriding Used Model
 
-You can also create your own Model, extending the default RalphMorris\LaravelInstagramFeed\Models\InstagramProfile model if you woud like to add your own mthods to this class. You can then update the config file with your own models namespace to tell the package to use that instead.
+You can also create your own Model, extending the default RalphMorris\LaravelInstagramFeed\Models\InstagramProfile model if you woud like to add your own methods to this class. You can then update the config file with your own model namespace to tell the package to use that instead.
 
 ## Usage
 
