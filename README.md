@@ -80,7 +80,7 @@ class InstagramController extends Controller
 
 	public function __construct(Instagram $instagram)
 	{
-		$this->instagram = $instagram;
+        $this->instagram = $instagram;
 	}
 
     /**
@@ -111,7 +111,7 @@ class InstagramController extends Controller
 
         auth()->user()->storeInstagramProfile($data);
 
-		return redirect()->route('home');
+        return redirect()->route('home');
     }
 
 }
