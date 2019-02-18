@@ -6,7 +6,6 @@ use Carbon\Carbon;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Cache;
-use RalphMorris\LaravelInstagramFeed\Exceptions\InstagramErrorException;
 use RalphMorris\LaravelInstagramFeed\Models\InstagramProfile;
 
 class Instagram
