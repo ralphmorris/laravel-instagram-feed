@@ -46,15 +46,87 @@ You can also create your own Model, extending the default RalphMorris\LaravelIns
 
 ## Usage
 
-``` php
-// Usage description here
+Add the HasInstagramTrait trait to your model that is the owner of the Instagram Feed. For example the User model.
+
+```php
+namespace App;
+
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use RalphMorris\LaravelInstagramFeed\Traits\HasInstagramTrait;
+
+class User extends Authenticatable
+{
+    use HasInstagramTrait;
 ```
 
-### Testing
+See the below stripped back controller to view the basic flow of sending the user to the Instagram Authorisation screen, receiving the callback and then retrieving the users Instagram acess token. 
+
+``` php
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use RalphMorris\LaravelInstagramFeed\Instagram;
+
+class InstagramController extends Controller
+{
+	private $instagram;
+
+	public function __construct(Instagram $instagram)
+	{
+		$this->instagram = $instagram;
+	}
+
+    /**
+     * Redirect the user to the Instagram auth page
+     * 
+     * @return Redirect
+     */
+    public function connect()
+    {
+    	return redirect($this->instagram->getAuthUrl());
+    }
+
+    /**
+     * Handles Instagram redirect callback on success/error after the user has confirmed/declined
+     * the application to access their account.
+     * 
+     * @param  Request $request 
+     * @return Redirect
+     */
+    public function callback(Request $request)
+    {
+        if ($request->error) 
+        {
+            // handle the error from Instagram in your application
+        }
+
+        $data = $this->instagram->retrieveAccessToken($request->code);
+
+        auth()->user()->storeInstagramProfile($data);
+
+		return redirect()->route('home');
+    }
+
+}
+```
+
+After you have stored your access token in your InstagramProfile model you can get the feed by calling getFeed() on the InstagramProfile instance.
+
+For example:
+
+```php
+$feed = auth()->user()->instagram->getFeed();
+```
+
+## API Errors
+
+Occassionally I have had exceptions where fetching the last version of the feed has thrown an error. This is usually because the access_token has become invalid, possibly as a result of the applications granted permissions being deleted on the Instagram side. When these exceptions occur they are marked in the database as having had an error and the error message stored for review if needed.
+
+<!-- ### Testing
 
 ``` bash
 composer test
-```
+``` -->
 
 ### Changelog
 

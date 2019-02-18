@@ -114,7 +114,6 @@ class Instagram
                 $this->instagramProfile->error_message = $e->getMessage();
                 $this->instagramProfile->save();
 
-                throw InstagramErrorException::errorGettingFeed($this->instagramProfile, $e->getMessage(), 422);
             }
 
             return null;
