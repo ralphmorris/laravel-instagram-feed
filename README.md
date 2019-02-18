@@ -59,7 +59,14 @@ class User extends Authenticatable
     use HasInstagramTrait;
 ```
 
-See the below stripped back controller to view the basic flow of sending the user to the Instagram Authorisation screen, receiving the callback and then retrieving the users Instagram acess token. 
+See the below controller to view the basic flow of sending the user to the Instagram Authorisation screen, receiving the callback and then retrieving the users Instagram acess token. 
+
+This would require two routes to be defined also:
+
+```php
+Route::get('/instagram-connect', 'InstagramController@connect')->name('instagram.connect');
+Route::get('/instagram/callback', 'InstagramController@callback')->name('instagram.callback');
+```
 
 ``` php
 namespace App\Http\Controllers;
