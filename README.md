@@ -57,6 +57,7 @@ use RalphMorris\LaravelInstagramFeed\Traits\HasInstagramTrait;
 class User extends Authenticatable
 {
     use HasInstagramTrait;
+}
 ```
 
 See the below controller to view the basic flow of sending the user to the Instagram Authorisation screen, receiving the callback and then retrieving the users Instagram acess token. 
