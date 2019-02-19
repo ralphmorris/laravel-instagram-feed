@@ -78,10 +78,10 @@ class InstagramController extends Controller
 {
 	private $instagram;
 
-	public function __construct(Instagram $instagram)
-	{
+    public function __construct(Instagram $instagram)
+    {
         $this->instagram = $instagram;
-	}
+    }
 
     /**
      * Redirect the user to the Instagram auth page
@@ -90,7 +90,7 @@ class InstagramController extends Controller
      */
     public function connect()
     {
-    	return redirect($this->instagram->getAuthUrl());
+        return redirect($this->instagram->getAuthUrl());
     }
 
     /**
@@ -102,8 +102,7 @@ class InstagramController extends Controller
      */
     public function callback(Request $request)
     {
-        if ($request->error) 
-        {
+        if ($request->error) {
             // handle the error from Instagram in your application
         }
 
